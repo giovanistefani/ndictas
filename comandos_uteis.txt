@@ -1,0 +1,69 @@
+
+psql -h prd-dictas-postgresql-server.postgres.database.azure.com -U etl@prd-dictas-postgresql-server.postgres.database.azure.com -W dictas -d
+
+host: prd-dictas-postgresql-server.postgres.database.azure.com
+db: dictas
+user: etl@prd-dictas-postgresql-server.postgres.database.azure.com
+senha: 8IUGjRyaNKQIlesq
+
+
+Dados para o teste:
+https://drive.google.com/open?id=1NW394wpk-fwHsMnevyVQs3TmHU2U9t7Y
+
+
+Acesso a VM com o airflow:
+hostname: querydictas.eastus2.cloudapp.azure.com
+user: dictasquery
+pass: 7AbYGuhUzYrnixrweq1pVjsIbtGsoq9l
+ssh dictasquery@querydictas.eastus2.cloudapp.azure.com
+
+
+Airflow:
+host: http://querydictas.eastus2.cloudapp.azure.com:7070/admin/airflow/login
+user: san
+pass: master@123
+
+
+blobs
+
+name: datalake2transient
+key: FKzr09vc/f19O96eRw8d2Yu+VTUGGUgerBbEczv36KOFW40bPHCKB9PpagSgJhxKprVo+77A6a2EAzd3zO8DfQ==
+
+name: datalake2raw
+key: tfM/5o5L96EWtE4ampENhE3p8R+kF3QFQDgcAO8mo8EwyFQLiAYRQEsV2HtiA1mgadoC24BH6hPXrxtO6EnGbg==
+
+name: datalake2trusted
+key: qz84XPIGs0v0FPYI9Z8WZrTzod7axvKWMw/JIp3rCC8RGEms8dmvcwa0PnFsAnaeRYx2idnWvxuh+nAT7uupGA==
+
+name: datalake2refined
+key: 2NvZKFAnu/A8ZyBxHpGyDGBV9Srsb/IEq47tzuUOazMl0yyyMtJOjLk4I4Z7L/4d02QQBj+T/hFuPbN9RSPkKg==
+
+
+#docker build
+sudo docker build -t etl-dictas .
+
+##Rodar airflow local
+sudo docker-compose -f docker-compose.yml up -d
+
+#bash no docker
+docker exec -it 7fa5e497c5fc /bin/bash 
+
+
+##Load petl
+import psycopg2
+connection = psycopg2.connect('dbname=example user=postgres')
+    etl.todb(table, connection, 'nm_table')
+
+# Manutenção docker
+Usage:	docker system <Commands>
+
+Commands:
+  df          Show docker disk usage
+  events      Get real time events from the server
+  info        Display system-wide information
+  prune       Remove unused data
+
+
+#Comandos sftp
+--Carregar arquivos
+put nomearquivo

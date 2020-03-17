@@ -1,0 +1,152 @@
+--bt_prestador
+
+nome            tipo_dado           tamanho null
+pk_prestador	character varying	200     NO	    
+fk_operadora	bigint	                    NO	    
+nome	        character varying	250     YES	    
+razao_social	character varying   250     NO	    
+endereco	    character varying	250     YES	    
+bairro	        character varying	250     YES	    
+cidade	        character varying	250     YES	    
+uf	            character varying	2       YES	    
+cep	            character varying	10      YES	    
+fone1	        character varying	15      YES	    
+fone2	        character varying	15      YES	    
+fone3	        character varying	15      YES	    
+latitude	    character varying	20      YES	    
+longitude	    character varying	20      YES	    
+tipo	        character varying	100     YES	    
+cnpj	        character varying	200     YES	    
+grupo_prestador	character varying	        YES	
+
+
+--bt_empresa
+nome            tipo_dado           tamanho null
+pk_empresa	    bigint	                    NO	
+fk_operadora	bigint	                    NO	
+nome	        character varying	250     YES	
+razao_social	character varying	250     YES	
+cnpj	        character varying	50      YES	
+
+
+--bt_servico
+nome            tipo_dado           tamanho null
+pk_servico	    bigint	                    NO	
+fk_operadora	bigint	                    NO	
+tipo	        character varying	        NO	
+descricao	    character varying	1000    YES	
+grupo	        character varying	255     YES	
+subgrupo	    character varying	255     YES	
+dt_inclusao	    date	                    YES	
+dt_alteracao	date	                    YES	
+grupo_dictas	character varying	        YES	
+grupo_estoque	character varying	        YES	
+
+
+--bt_beneficiario
+nome                    tipo_dado           tamanho null
+pk_beneficiario	        character varying	50      NO	
+fk_operadora	        bigint	                    NO	
+fk_empresa	            character varying	50      YES	
+cod_pessoa	            bigint	                    YES	
+nr_beneficiario	        character varying	50      NO	
+nr_beneficiario_tit	    character varying	50      YES	
+nome	                character varying	250     NO	
+cpf	                    character varying	50      YES	
+sexo	                character varying	2       NO	
+dt_nascimento	        date	                    YES	
+cod_plano	            character varying	50      NO	
+descricao_plano	        character varying	250     NO	
+copart_percentual	    integer	                    YES	
+limite_copart	        numeric	                    YES	
+tipo_acomodacao	        character varying	50      YES	
+abrangencia_plano	    character varying	250     NO	
+grau_dependencia	    character varying	50      YES	
+dt_inclusao	            date	                    NO	
+dt_exclusao	            date	                    YES	
+nome_mae	            character varying	250     YES	
+endereco	            character varying	500     YES	
+bairro	                character varying	250     YES	
+cidade	                character varying	250     YES	
+uf	                    character varying	2       YES	
+cep	                    character varying	10      YES	
+dt_alteracao	        date	                    YES	
+tipo_contrato	        character varying	50      NO	
+tipo_cliente	        character varying	50      YES	
+nr_cartaonacionalsaude	character varying	50      YES	
+plano_regulamentado	    character varying	        YES	
+descricao_entidade	    character varying	150     YES	
+tipo_pessoa	            character varying	        YES	
+acao_judicial	        integer	                    YES	
+
+
+--bt_vidas
+nome                    tipo_dado           tamanho null
+mes_competencia	        date	                    NO	
+tempo_permanencia_meses	integer	                    YES	
+tempo_permanencia_anos	real	                    YES	
+idade	                integer	                    YES	
+fk_beneficiario	        character varying	        NO	
+fk_operadora	        integer	                    NO	
+ativo	                integer	                    YES	
+excluido	            integer	                    YES	
+incluido	            integer	                    YES	
+reincluido	            integer	                    YES	
+transferido	            integer	                    YES	
+
+
+--bt_receita
+nome                    tipo_dado           tamanho null
+fk_operadora	        bigint	                    NO	
+fk_beneficiario	        character varying	50      NO	
+mes_competencia	        date	                    NO	
+dt_geracao_titulo	    date	                    YES	
+dt_pgto	                date	                    YES	
+nr_centro_custo	        character varying	100     YES	
+descricao_centro_custo	character varying	250     YES	
+tipo_cobranca	        character varying	100     YES	
+vl_cobranca	            numeric	                    YES	
+vl_pago	                numeric	                    YES	
+fk_empresa	            bigint	                    NO	
+tipo_cobranca_sub	    character varying	100     YES	
+
+
+--bt_custo
+nome                    tipo_dado           tamanho null
+pk_custo	            bigint	                    NO	
+fk_beneficiario	        character varying	25      NO	
+fk_servico	            bigint	                    NO	
+fk_medicoexecutante	    character varying	30      YES	
+fk_medicosolicitante	character varying	30      YES	
+fk_prestador	        character varying	20      YES	
+fk_cid	                character varying	520     YES	
+fk_operadora	        bigint	                    NO	
+nr_usuario	            character varying	30      YES	
+nr_guia	                character varying	40      YES	
+nr_guia_principal	    character varying	40      YES	
+tipo_guia	            character varying	50      YES	
+tipo_atendimento	    character varying	60      YES	
+dt_realizacao	        date	                    YES	
+mes_competencia	        date	                    NO	
+ds_indicacao_clinica	text	                    YES	
+ind_internacao	        character varying	1       NO	
+tipo_internacao	        character varying	40      YES	
+dt_fim_internacao	    date	                    YES	
+dt_ini_internacao	    date	                    YES	
+qtd	                    numeric	                    YES	
+vl_coparticipacao	    numeric	                    YES	
+vl_glosa	            numeric	                    YES	
+vl_total	            numeric	                    YES	
+vl_unitario	            numeric	                    YES	
+tipo_registro	        character varying	50      YES	
+cod_servico_tipo	    character varying	40      YES	
+dt_controle	            timestamp without time zone	YES	
+vl_hm	                numeric	                    NO	
+vl_co	                numeric	                    NO	
+vl_filme	            numeric	                    NO	
+partic_medico	        character varying	50      YES
+tipo_acomodacao	        character varying	50      YES
+fk_destino_pgto	        character varying	50      YES
+fk_local_atend	        character varying	50      YES
+qtd_unica	            numeric	                    YES	
+fk_capa_unico	        character varying	50      YES	

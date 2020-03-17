@@ -1,0 +1,869 @@
+{
+  "beneficiario": {
+    "typerun": "full",
+    "pk": "pk_beneficiario",
+    "colr_eferencia": "",
+    "fields": {
+      "Cod. Beneficiário": {
+        "nome_banco": "pk_beneficiario",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Nr. Carteira": {
+        "nome_banco": "nr_beneficiario",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Nr. Carteira Titular": {
+        "nome_banco": "nr_beneficiario_tit",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Cod. Empresa": {
+        "nome_banco": "fk_empresa",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Nome do beneficiário": {
+        "nome_banco": "nome",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "CPF" : {
+        "nome_banco": "cpf",
+        "tipo": "string",
+        "regex": "[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Dt. Nascimento" : {
+        "nome_banco": "dt_nascimento",
+        "tipo": "date",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": "%d/%m/%Y"
+      } ,
+      "Cod. Plano" : {
+        "nome_banco": "cod_plano",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Descrição Plano" : {
+        "nome_banco": "descricao_plano",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Coparticipação Percentual" : {
+        "nome_banco": "copart_percentual",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "0",
+        "date_format": ""
+      } ,
+      "9" : {
+        "nome_banco": "9",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Tipo Acomodação" : {
+        "nome_banco": "tipo_acomodacao",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Abrangência Plano" : {
+        "nome_banco": "abrangencia_plano",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Grau Dependência" : {
+        "nome_banco": "grau_dependencia",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Dt. Inclusão" : {
+        "nome_banco": "dt_inclusao",
+        "tipo": "date",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": "%d/%m/%Y"
+      } ,
+      "Dt. Exclusão" : {
+        "nome_banco": "dt_exclusao",
+        "tipo": "date",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "31/12/3000",
+        "date_format": "%d/%m/%Y"
+      } ,
+      "16" : {
+        "nome_banco": "16",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Sexo" : {
+        "nome_banco": "sexo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Tipo Contrato" : {
+        "nome_banco": "tipo_contrato",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "19" : {
+        "nome_banco": "19",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "20" : {
+        "nome_banco": "20",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "21" : {
+        "nome_banco": "21",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "22" : {
+        "nome_banco": "22",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Nr. Do Cartão nacional da saúde" : {
+        "nome_banco": "nr_cartaonacionalsaude",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "0",
+        "date_format": ""
+      } ,
+      "Descrição da entidade" : {
+        "nome_banco": "descricao_entidade",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      }
+    }
+  } ,
+  "consulta": {
+    "typerun": "full",
+    "pk":"fk_servico",
+    "col_referencia":"",
+    "fields": {
+      "Código da consulta" : {
+        "nome_banco": "fk_servico",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Tipo do serviço da consulta" : {
+        "nome_banco": "tipo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Grupo da Consulta" : {
+        "nome_banco": "grupo_dictas",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      }
+
+    }
+  } ,
+  "custo": {
+    "typerun": "increment",
+    "pk":"",
+    "col_referencia":"",
+    "fields": {
+      "0": {
+        "nome_banco": "0",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Cod. Beneficiário": {
+        "nome_banco": "fk_beneficiario",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Mês Competência": {
+        "nome_banco": "mes_competencia",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "0",
+        "date_format": ""
+      } ,
+      "Nr. Guia" : {
+        "nome_banco": "nr_guia",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Nr. Guia Principal": {
+        "nome_banco": "nr_guia_principal",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Dt. Realização": {
+        "nome_banco": "dt_realizacao",
+        "tipo": "date",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "01/01/1900",
+        "date_format": "%d/%m/%Y"
+      } ,
+      "Cod. CID": {
+        "nome_banco": "fk_cid",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "-1",
+        "date_format": ""
+      } ,
+      "Dt. Início Internação": {
+        "nome_banco": "dt_ini_internacao",
+        "tipo": "date",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "01/01/1900",
+        "date_format": "%d/%m/%Y"
+      } ,
+      "Dt. Fim Internação": {
+        "nome_banco": "dt_fim_internacao",
+        "tipo": "date",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "31/12/3000",
+        "date_format": "%d/%m/%Y"
+      } ,
+      "Cód do Solicitante": {
+        "nome_banco": "fk_medicosolicitante",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "-1",
+        "date_format": ""
+      } ,
+      "Cód do Executante": {
+        "nome_banco": "cod_executante",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "-1",
+        "date_format": ""
+      } ,
+      "Cód Local de atendimento": {
+        "nome_banco": "fk_local_atend",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Cód do Local atendimento Único": {
+        "nome_banco": "fk_capa_unico",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Cód do Pagamento": {
+        "nome_banco": "fk_destino_pgto",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Cod. Serviço"  : {
+         "nome_banco": "fk_servico",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+       } ,
+      "Tipo de serviço" : {
+        "nome_banco": "cod_servico_tipo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Quantidade": {
+        "nome_banco": "qtd",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "-1.1",
+        "date_format": ""
+      } ,
+      "Quantidade Única": {
+        "nome_banco": "qtd_unica",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "-1",
+        "date_format": ""
+      } ,
+      "Vl. Unitário": {
+        "nome_banco": "vl_unitario",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Vl. Total": {
+        "nome_banco": "vl_total",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Vl. Coparticipação": {
+        "nome_banco": "vl_coparticipacao",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Internação": {
+        "nome_banco": "ind_internacao",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Tipo Registro": {
+        "nome_banco": "tipo_registro",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Tipo Atendimento": {
+        "nome_banco": "tipo_atendimento",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      } ,
+      "Tipo Guia": {
+        "nome_banco": "tipo_guia",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "25": {
+        "nome_banco": "25",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Tipo de internação": {
+        "nome_banco": "tipo_internacao",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Tipo de acomodação": {
+        "nome_banco": "tipo_acomodacao",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Valor de HM pago": {
+        "nome_banco": "vl_hm",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Valor do CO pago": {
+        "nome_banco": "vl_co",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Valor do Filme pago": {
+        "nome_banco": "vl_filme",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Participação do médico": {
+        "nome_banco": "partic_medico",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      }
+    }
+  } ,
+  "diaria": {
+    "typerun": "full",
+    "pk":"fk_servico",
+    "col_referencia":"",
+    "fields": {
+      "Código da diária": {
+        "nome_banco": "fk_servico",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Tipo do serviço da diária": {
+        "nome_banco": "tipo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Grupo da diária": {
+        "nome_banco": "grupo_dictas",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      }
+    }
+  } ,
+  "empresa": {
+    "typerun": "full",
+    "pk":"pk_empresa",
+    "col_referencia":"",
+    "fields": {
+      "Cod. Empresa": {
+        "nome_banco": "pk_empresa",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Nome": {
+        "nome_banco": "nome",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "2": {
+        "nome_banco": "2",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "CNPJ": {
+        "nome_banco": "cnpj",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      }
+    }
+  } ,
+  "prestador": {
+    "typerun": "full",
+    "pk":"pk_medico_prestador",
+    "col_referencia":"",
+    "fields": {
+      "Cod. Médico\/Prestador (campo chave)": {
+        "nome_banco": "pk_medico_prestador",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Nome": {
+        "nome_banco": "nome_fantasia",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "2": {
+        "nome_banco": "2",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "CRM": {
+        "nome_banco": "cod_crm",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "UF CRM": {
+        "nome_banco": "uf_crm",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "5": {
+        "nome_banco": "5",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "CPF\/CNPJ": {
+        "nome_banco": "num_cpf_cnpj",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Tipo": {
+        "nome_banco": "tipo_prestador",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Grupo": {
+        "nome_banco": "grupo_prestador",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "9": {
+        "nome_banco": "9",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Descrição da Especialidade": {
+        "nome_banco": "especialidade",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Especialidade Principal": {
+        "nome_banco": "grau",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      }
+    }
+  } ,
+  "receita": {
+    "typerun": "increment",
+    "pk":"",
+    "col_referencia":"",
+    "fields": {
+      "Mês Competência": {
+        "nome_banco": "mes_competencia",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Cod. Beneficiário": {
+        "nome_banco": "fk_beneficiario",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Cod. Empresa": {
+        "nome_banco": "fk_empresa",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "3": {
+        "nome_banco": "3",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "4": {
+        "nome_banco": "4",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "5": {
+        "nome_banco": "5",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Dt. Geração Título": {
+        "nome_banco": "dt_geracao_titulo",
+        "tipo": "date",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": "%Y%m%d"
+      },
+      "Tipo Cobrança": {
+        "nome_banco": "tipo_cobranca",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Vl. Cobrança": {
+        "nome_banco": "vl_cobranca",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Vl. Pago": {
+        "nome_banco": "vl_pago",
+        "tipo": "float",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+
+    }
+    }
+  },
+  "servico": {
+    "typerun": "full",
+    "pk":"pk_servico",
+    "col_referencia":"",
+    "fields": {
+      "Cod. Serviço": {
+        "nome_banco": "pk_servico",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Tipo": {
+        "nome_banco": "tipo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Descrição": {
+        "nome_banco": "descricao",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Capítulo": {
+        "nome_banco": "capitulo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Grupo": {
+        "nome_banco": "grupo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Subgrupo": {
+        "nome_banco": "subgrupo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "6": {
+        "nome_banco": "6",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Indicador Cirúrgico": {
+        "nome_banco": "ind_cirurgico",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+
+    }
+    }
+  },
+  "vidas": {
+    "typerun": "increment",
+    "pk":"",
+    "col_referencia":"",
+    "fields": {
+      "Mês Competência": {
+        "nome_banco": "mes_competencia",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Cod. Beneficiário": {
+        "nome_banco": "fk_beneficiario",
+        "tipo": "int",
+        "regex": "",
+        "nullable": "notnull",
+        "replace_null": "",
+        "date_format": ""
+      },
+      "Status": {
+        "nome_banco": "ativo",
+        "tipo": "string",
+        "regex": "",
+        "nullable": "null",
+        "replace_null": "",
+        "date_format": ""
+
+    }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  jupyter:
+    user: root
+    build: .
+    image: jupyter
+    working_dir: /home/giovani/Documentos/jupyter/
+    entrypoint: ./scripts/docker-entrypoint.sh
+    command: jupyter
+    ports:
+      - $JUPYTER_PORT:$JUPYTER_PORT
+    volumes:
+      - .:/home/giovani/Documentos/jupyter/
+      - $DATALAKE_DIR_LOCAL:$DATALAKE_DIR_VIRTUAL

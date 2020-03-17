@@ -1,0 +1,10 @@
+pandas
+pandas_gbq
+pygrametl
+sqlalchemy
+petl
+chardet
+psycopg2-binary
+azure-storage-blob
+azure-storage-file
+azure-storage-queue

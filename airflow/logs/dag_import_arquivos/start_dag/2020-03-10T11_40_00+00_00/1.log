@@ -1,0 +1,12 @@
+[2020-03-10 11:54:07,628] {{taskinstance.py:655}} INFO - Dependencies all met for <TaskInstance: dag_import_arquivos.start_dag 2020-03-10T11:40:00+00:00 [queued]>
+[2020-03-10 11:54:07,684] {{taskinstance.py:655}} INFO - Dependencies all met for <TaskInstance: dag_import_arquivos.start_dag 2020-03-10T11:40:00+00:00 [queued]>
+[2020-03-10 11:54:07,686] {{taskinstance.py:866}} INFO - 
+--------------------------------------------------------------------------------
+[2020-03-10 11:54:07,687] {{taskinstance.py:867}} INFO - Starting attempt 1 of 2
+[2020-03-10 11:54:07,688] {{taskinstance.py:868}} INFO - 
+--------------------------------------------------------------------------------
+[2020-03-10 11:54:07,725] {{taskinstance.py:887}} INFO - Executing <Task(DummyOperator): start_dag> on 2020-03-10T11:40:00+00:00
+[2020-03-10 11:54:07,732] {{standard_task_runner.py:53}} INFO - Started process 38 to run task
+[2020-03-10 11:54:07,865] {{logging_mixin.py:112}} INFO - Running %s on host %s <TaskInstance: dag_import_arquivos.start_dag 2020-03-10T11:40:00+00:00 [running]> be1525e2e083
+[2020-03-10 11:54:07,929] {{taskinstance.py:1048}} INFO - Marking task as SUCCESS.dag_id=dag_import_arquivos, task_id=start_dag, execution_date=20200310T114000, start_date=20200310T115407, end_date=20200310T115407
+[2020-03-10 11:54:17,570] {{logging_mixin.py:112}} INFO - [2020-03-10 11:54:17,570] {{local_task_job.py:103}} INFO - Task exited with return code 0

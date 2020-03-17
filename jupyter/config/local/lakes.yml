@@ -1,0 +1,6 @@
+lakes:
+  transient: file:///datalake/transient
+  raw: file:///datalake/raw
+  trusted: file:///datalake/trusted
+  refined: file:///datalake/refined
+  models: file:///datalake/models

@@ -1,0 +1,115 @@
+version: '2.1'
+services:
+    redis:
+        image: 'redis:5.0.5'
+
+    postgres:
+        image: postgres:9.6
+        restart: always
+        environment:
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=airflow
+            - POSTGRES_DB=airflow
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./scripts/dev_schema.sql:/docker-entrypoint-initdb.d/dev_schema.sql
+        expose:
+          - 5432
+
+    webserver:
+        image: etl-dictas
+        restart: always
+        depends_on:
+            - postgres
+            - redis
+        environment:
+            - LOAD_EX=n
+            - EXECUTOR=Celery
+            - AIRFLOW_HOME=/usr/local/airflow
+            - AIRFLOW__CORE__DEFAULT_TIMEZONE=America/Sao_Paulo
+            - AIRFLOW__WEBSERVER__AUTHENTICATE=True
+            - AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.contrib.auth.backends.password_auth
+            - AIRFLOW__WEBSERVER__RBAC=True
+        volumes:
+            - ./dags:/usr/local/airflow/dags
+            - ./files:/usr/local/airflow/files
+            - ./plugins:/usr/local/airflow/plugins
+            - ./scripts:/usr/local/airflow/scripts
+            - ./metadado:/usr/local/airflow/metadado
+            - ./procfiles:/usr/local/airflow/procfiles
+        ports:
+            - "7171:8080"
+        command: webserver
+        privileged: true
+        healthcheck:
+            test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
+            interval: 30s
+            timeout: 30s
+            retries: 3
+
+    flower:
+        image: etl-dictas
+        restart: always
+        depends_on:
+            - redis
+        environment:
+            - EXECUTOR=Celery
+        ports:
+            - "5555:5555"
+        command: flower
+
+    scheduler:
+        image: etl-dictas
+        restart: always
+        depends_on:
+            - redis
+            - postgres
+            - webserver
+        volumes:
+            - ./dags:/usr/local/airflow/dags
+            - ./files:/usr/local/airflow/files
+            - ./plugins:/usr/local/airflow/plugins
+            - ./scripts:/usr/local/airflow/scripts
+            - ./tempfiles:/usr/local/airflow/tempfiles
+            - ./metadado:/usr/local/airflow/metadado
+            - ./procfiles:/usr/local/airflow/procfiles
+        environment:
+            - LOAD_EX=n
+            - FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+            - EXECUTOR=Celery
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=airflow
+            - POSTGRES_DB=airflow
+        command: scheduler
+
+
+    add_user:
+        image: etl-dictas
+        restart: on-failure
+        depends_on:
+            - redis
+            - scheduler
+            - flower
+            - webserver
+            - postgres
+        volumes:
+            - ./dags:/usr/local/airflow/dags
+            - ./files:/usr/local/airflow/files
+            - ./plugins:/usr/local/airflow/plugins
+            - ./scripts:/usr/local/airflow/scripts
+            - ./tempfiles:/usr/local/airflow/tempfiles
+            - ./metadado:/usr/local/airflow/metadado
+            - ./procfiles:/usr/local/airflow/procfiles
+        environment:
+            - LOAD_EX=n
+            - FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+            - EXECUTOR=Celery
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=airflow
+            - POSTGRES_DB=airflow
+            - C_FORCE_ROOT=true
+            - AIRFLOW__WEBSERVER__AUTHENTICATE=True
+            - AIRFLOW__WEBSERVER__AUTH_BACKEND=airflow.contrib.auth.backends.password_auth
+            - AIRFLOW__WEBSERVER__RBAC=True
+        command: bash -c "./scripts/airflow_cfg.sh"

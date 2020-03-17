@@ -1,0 +1,13 @@
+pandas
+petl
+psycopg2-binary
+flask-bcrypt
+chardet
+sqlalchemy
+azure
+azure-storage-blob
+azure-storage-file
+azure-storage-queue
+azure-storage-common
+azure-storage-nspkg
+azure-core
